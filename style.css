@@ -1,0 +1,103 @@
+html, body {
+  min-height: 100dvh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100dvh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background: url('capturapc.png') no-repeat center center fixed;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow-x: hidden;
+}
+.full-link {
+  display: block;
+  width: 100vw;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  text-decoration: none;
+  color: inherit;
+}
+.img-mobile {
+  display: none;
+}
+.img-desktop {
+  display: block;
+}
+.cookie-img-desktop,
+.cookie-img-mobile {
+  width: 420px;
+  max-width: 90vw;
+  cursor: pointer;
+  transition: transform 0.25s cubic-bezier(.4,2,.6,1), filter 0.18s;
+  z-index: 20;
+  display: block;
+  outline: none;
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.18);
+  animation: float 2.5s ease-in-out infinite;
+}
+.cookie-img-desktop:hover,
+.cookie-img-desktop:active,
+.cookie-img-desktop:focus-visible,
+.cookie-img-mobile:hover,
+.cookie-img-mobile:active,
+.cookie-img-mobile:focus-visible {
+  transform: scale(1.12);
+  filter: brightness(1.18) drop-shadow(0 0 28px #fff8);
+}
+/* Efeito de flutuação */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-18px);
+  }
+}
+/* Responsividade para celulares e tablets */
+@media (max-width: 900px) {
+  body {
+    background: url('capturacel.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-attachment: fixed;
+    flex-direction: column;
+    min-height: 100dvh;
+    justify-content: flex-start;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+  .img-mobile {
+    display: block;
+  }
+  .img-desktop {
+    display: none;
+  }
+  .cookie-img-mobile {
+    width: 80vw;
+    max-width: 340px;
+    min-width: 120px;
+    margin: 0 auto;
+    padding: 0 2vw;
+  }
+}
+
+/* Ajuste extra para celulares muito pequenos */
+@media (max-width: 400px) {
+  .cookie-img-mobile {
+    width: 90vw;
+    max-width: 95vw;
+    min-width: 90px;
+    padding: 0 1vw;
+  }
+}
